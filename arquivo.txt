@@ -1,2 +1,0 @@
-{'465': {'Pessoa': {'Nome': 'ggfdgfd', 'Data de Nascimento': 'gdfgd', 'CPF': 'gdfgd', 'Endereco': 'gfd'}, 'Automovel': {'Placa': 'gfdgd', 'Modelo': 'gdgfd', 'Ano': 'gdgfd', 'Cor': 'gdgfd'}}}
-{'777': {'Pessoa': {'Nome': 'Taynara', 'Data de Nascimento': '121212', 'CPF': 'fsdfs', 'Endereco': 'dsfsd'}, 'Automovel': {'Placa': 'fsfds', 'Modelo': 'fsdfs', 'Ano': 'fsdf', 'Cor': 'fsdfs'}}}
