@@ -1,7 +1,7 @@
 from sys import exit
 import json 
 import ast 
-
+import os
 
 def criar_registro(**kwargs):
     codigo = kwargs.get('codigo')
@@ -35,64 +35,73 @@ def criar_registro(**kwargs):
         print('Esse código já existe, use outro código!')
 
 def ver_registros():
-    f = open("arquivo.txt", "r")
-    line = f.readline()
-    cnt = 1
-    while line:
-        res = ast.literal_eval(line)
-        for i, x in res.items():
-            print('-----------------------------')
-            print('Código: ' + i)
-            for k, y in x.items():
-                print('\n' + '          ' + k + '          ' + '\n')
-                for t, u in y.items():
-                    print(t + ':' + u)
-
+    if(os.stat("arquivo.txt").st_size == 0):
+        print('Não tem nenhum registro cadastrado!')
+    else:
+        f = open("arquivo.txt", "r")
         line = f.readline()
-        cnt += 1
+        cnt = 1
+        while line:
+            res = ast.literal_eval(line)
+            for i, x in res.items():
+                print('-----------------------------')
+                print('Código: ' + i)
+                for k, y in x.items():
+                    print('\n' + '          ' + k + '          ' + '\n')
+                    for t, u in y.items():
+                        print(t + ':' + u)
+
+            line = f.readline()
+            cnt += 1
 
 def remover_registro():
-    print('Insira o código registro que deseja remover: ')
-    codigo = input()
-    with open("arquivo.txt", "r") as f:
-        lines = f.readlines()
-    with open("arquivo.txt", "w") as f:
-        for line in lines:
-            if not codigo in line.strip("\n"):
-                f.write(line)
+    if(os.stat("arquivo.txt").st_size == 0):
+        print('Não tem nenhum registro para ser excluído!')
+    else:
+        print('Insira o código registro que deseja remover: ')
+        codigo = input()
+        with open("arquivo.txt", "r") as f:
+            lines = f.readlines()
+        with open("arquivo.txt", "w") as f:
+            for line in lines:
+                if not codigo in line.strip("\n"):
+                    f.write(line)
 
 def editar_registro():
-    print('Insira o código do registro que deseja editar: ')
-    codigo = input()
-    print('Insira um novo Nome: ')
-    nome = input()
-    print('Insira uma nova Data de Nascimento: ')
-    data_nascimento = input()
-    print('Insira um novo o Endereço: ')
-    endereco = input()
-    print('Insira o novo CPF: ')
-    cpf = input()
-    print('Insira a nova placa do automovel: ')
-    placa = input()
-    print('Insira o novo modelo do automovel: ')
-    modelo = input()
-    print('Insira o novo ano do automovel: ')
-    ano = input()
-    print('Insira a nova cor do carro: ')
-    cor = input()
+    if(os.stat("arquivo.txt").st_size == 0):
+        print('Não tem nenhum registro para ser editado!')
+    else:
+        print('Insira o código do registro que deseja editar: ')
+        codigo = input()
+        print('Insira um novo Nome: ')
+        nome = input()
+        print('Insira uma nova Data de Nascimento: ')
+        data_nascimento = input()
+        print('Insira um novo o Endereço: ')
+        endereco = input()
+        print('Insira o novo CPF: ')
+        cpf = input()
+        print('Insira a nova placa do automovel: ')
+        placa = input()
+        print('Insira o novo modelo do automovel: ')
+        modelo = input()
+        print('Insira o novo ano do automovel: ')
+        ano = input()
+        print('Insira a nova cor do carro: ')
+        cor = input()
 
-    with open("arquivo.txt", "r") as f:
-        lines = f.readlines()
-    with open("arquivo.txt", "w") as f:
-        for line in lines:
-            if not codigo in line.strip("\n"):
-                f.write(line)
-    
-    criar_registro(
-        codigo=codigo, nome=nome, 
-        data_nascimento=data_nascimento, 
-        cpf=cpf, endereco=endereco, 
-        placa=placa, modelo=modelo, ano=ano, cor=cor)
+        with open("arquivo.txt", "r") as f:
+            lines = f.readlines()
+        with open("arquivo.txt", "w") as f:
+            for line in lines:
+                if not codigo in line.strip("\n"):
+                    f.write(line)
+        
+        criar_registro(
+            codigo=codigo, nome=nome, 
+            data_nascimento=data_nascimento, 
+            cpf=cpf, endereco=endereco, 
+            placa=placa, modelo=modelo, ano=ano, cor=cor)
 
 while True:
     print('--------------------------')
