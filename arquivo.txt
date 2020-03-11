@@ -1,2 +1,3 @@
 {'registro1': {'Pessoa': {'Nome': 'Taynara', 'Data de Nacimento': '12/09/1995', 'CPF': '04930907110', 'Endereco': 'Quadra 1 Lote 1700'}, 'Automovel': {'Placa': 'EJKC3', 'Modelo': 'Captur', 'Ano': '2017', 'Cor': 'pink'}}}
 {'registro2': {'Pessoa': {'Nome': 'Paulo', 'Data de Nacimento': '12/09/1995', 'CPF': '04930907110', 'Endereco': 'Quadra 1 Lote 1700'}, 'Automovel': {'Placa': 'EJKC3', 'Modelo': 'Captur', 'Ano': '2017', 'Cor': 'pink'}}}
+{'registro3': {'Pessoa': {'Nome': 'Tris', 'Data de Nacimento': '11/04/2019', 'CPF': '4535435345', 'Endereco': 'Quadra 1 Lote 3'}, 'Automovel': {'Placa': 'KSJD', 'Modelo': 'Corsa', 'Ano': '2018', 'Cor': 'Azul'}}}

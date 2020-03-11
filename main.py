@@ -42,21 +42,16 @@ def ver_registros():
         res = ast.literal_eval(line)
         for i, x in res.items():
             print('-----------------------------')
+            print('Código: ' + i)
             for k, y in x.items():
-                print('Codigo: ' + i)
                 print('\n' + '          ' + k + '          ' + '\n')
                 for t, u in y.items():
                     print(t + ':' + u)
 
         line = f.readline()
         cnt += 1
-    # res = ast.literal_eval(f.read()) 
-    # print(type(res))
-    # res = json.loads(f.read())
-    # print(res)
-    # for i in res:
-    #     print(res[i])
 
+   
 while True:
     print('--------------------------')
     print('O que deseja fazer ?')
@@ -68,11 +63,29 @@ while True:
     print('---------------------------')
     action = input("\n> ")
     if '1' in action:
+        print('Insira o código: ')
+        codigo = input()
+        print('Insira o Nome: ')
+        nome = input()
+        print('Insira a Data de Nascimento: ')
+        data_nascimento = input()
+        print('Insira o Endereço: ')
+        endereco = input()
+        print('Insira o CPF: ')
+        cpf = input()
+        print('Insira a placa do automovel: ')
+        placa = input()
+        print('Insira o modelo do automovel: ')
+        modelo = input()
+        print('Insira o ano do automovel: ')
+        ano = input()
+        print('Insira a cor do carro: ')
+        cor = input()
         criar_registro(
-            codigo=2, nome='Paulo', 
-            data_nascimento='12/09/1995', 
-            cpf='04930907110', endereco='Quadra 1 Lote 1700', 
-            placa='EJKC3', modelo='Captur', ano='2017', cor='pink')
+            codigo=codigo, nome=nome, 
+            data_nascimento=data_nascimento, 
+            cpf=cpf, endereco=endereco, 
+            placa=placa, modelo=modelo, ano=ano, cor=cor)
     elif '2' in action:
         print('editar')
     elif '3' in action:
