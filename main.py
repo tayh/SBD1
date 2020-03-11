@@ -51,7 +51,15 @@ def ver_registros():
         line = f.readline()
         cnt += 1
 
-   
+def remover_registro():
+    print('Insira o registro que deseja remover: ')
+    codigo = input()
+    with open("arquivo.txt", "r") as f:
+        lines = f.readlines()
+    with open("arquivo.txt", "w") as f:
+        for line in lines:
+            if not codigo in line.strip("\n"):
+                f.write(line)
 while True:
     print('--------------------------')
     print('O que deseja fazer ?')
@@ -89,7 +97,7 @@ while True:
     elif '2' in action:
         print('editar')
     elif '3' in action:
-        print('excluir')
+        remover_registro()
     elif '4' in action:
         ver_registros()
     elif '5' in action:
