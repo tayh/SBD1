@@ -114,29 +114,34 @@ while True:
     print('---------------------------')
     action = input("\n> ")
     if '1' in action:
-        print('Insira o código: ')
-        codigo = input()
-        print('Insira o Nome: ')
-        nome = input()
-        print('Insira a Data de Nascimento: ')
-        data_nascimento = input()
-        print('Insira o Endereço: ')
-        endereco = input()
-        print('Insira o CPF: ')
-        cpf = input()
-        print('Insira a placa do automovel: ')
-        placa = input()
-        print('Insira o modelo do automovel: ')
-        modelo = input()
-        print('Insira o ano do automovel: ')
-        ano = input()
-        print('Insira a cor do carro: ')
-        cor = input()
-        criar_registro(
-            codigo=codigo, nome=nome, 
-            data_nascimento=data_nascimento, 
-            cpf=cpf, endereco=endereco, 
-            placa=placa, modelo=modelo, ano=ano, cor=cor)
+        try:
+            print('Insira o código: ')
+            codigo = int(input())
+            print('Insira o Nome: ')
+            nome = input()
+            print('Insira a Data de Nascimento: ')
+            data_nascimento = input()
+            print('Insira o Endereço: ')
+            endereco = input()
+            print('Insira o CPF: ')
+            cpf = input()
+            print('Insira a placa do automovel: ')
+            placa = input()
+            print('Insira o modelo do automovel: ')
+            modelo = input()
+            print('Insira o ano do automovel: ')
+            ano = input()
+            print('Insira a cor do carro: ')
+            cor = input()
+
+            criar_registro(
+                    codigo=codigo, nome=nome, 
+                    data_nascimento=data_nascimento, 
+                    cpf=cpf, endereco=endereco, 
+                    placa=placa, modelo=modelo, ano=ano, cor=cor
+                )
+        except:
+            print('O código deve ser um número')
     elif '2' in action:
         editar_registro()
     elif '3' in action:
