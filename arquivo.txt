@@ -1,1 +1,2 @@
-{'registro2': {'Pessoa': {'Nome': 'Taynara', 'Data de Nacimento': '12/09/1995', 'CPF': '04930907110', 'Endereço': 'Quadra 1 Lote 1700'}, 'Automóvel': {'Placa': 'EJKC3', 'Modelo': 'Captur', 'Ano': '2017', 'Cor': 'pink'}}}
+{'registro1': {'Pessoa': {'Nome': 'Taynara', 'Data de Nacimento': '12/09/1995', 'CPF': '04930907110', 'Endereco': 'Quadra 1 Lote 1700'}, 'Automovel': {'Placa': 'EJKC3', 'Modelo': 'Captur', 'Ano': '2017', 'Cor': 'pink'}}}
+{'registro2': {'Pessoa': {'Nome': 'Paulo', 'Data de Nacimento': '12/09/1995', 'CPF': '04930907110', 'Endereco': 'Quadra 1 Lote 1700'}, 'Automovel': {'Placa': 'EJKC3', 'Modelo': 'Captur', 'Ano': '2017', 'Cor': 'pink'}}}
