@@ -15,14 +15,14 @@ def criar_registro(**kwargs):
     cor = kwargs.get('cor')
 
 
-    registro_codigo = 'registro' + str(codigo)
+    registro_codigo = str(codigo)
 
     f = open("arquivo.txt", "r")
 
     if not registro_codigo in f.read():
         registros = {
             registro_codigo: {
-                'Pessoa': {'Nome': nome, 'Data de Nacimento': data_nascimento, 'CPF': cpf, 'Endereco': endereco},
+                'Pessoa': {'Nome': nome, 'Data de Nascimento': data_nascimento, 'CPF': cpf, 'Endereco': endereco},
                 'Automovel': {'Placa': placa, 'Modelo': modelo, 'Ano': ano, 'Cor': cor},
             }
         }
@@ -52,7 +52,7 @@ def ver_registros():
         cnt += 1
 
 def remover_registro():
-    print('Insira o registro que deseja remover: ')
+    print('Insira o código registro que deseja remover: ')
     codigo = input()
     with open("arquivo.txt", "r") as f:
         lines = f.readlines()
@@ -60,6 +60,40 @@ def remover_registro():
         for line in lines:
             if not codigo in line.strip("\n"):
                 f.write(line)
+
+def editar_registro():
+    print('Insira o código do registro que deseja editar: ')
+    codigo = input()
+    print('Insira um novo Nome: ')
+    nome = input()
+    print('Insira uma nova Data de Nascimento: ')
+    data_nascimento = input()
+    print('Insira um novo o Endereço: ')
+    endereco = input()
+    print('Insira o novo CPF: ')
+    cpf = input()
+    print('Insira a nova placa do automovel: ')
+    placa = input()
+    print('Insira o novo modelo do automovel: ')
+    modelo = input()
+    print('Insira o novo ano do automovel: ')
+    ano = input()
+    print('Insira a nova cor do carro: ')
+    cor = input()
+
+    with open("arquivo.txt", "r") as f:
+        lines = f.readlines()
+    with open("arquivo.txt", "w") as f:
+        for line in lines:
+            if not codigo in line.strip("\n"):
+                f.write(line)
+    
+    criar_registro(
+        codigo=codigo, nome=nome, 
+        data_nascimento=data_nascimento, 
+        cpf=cpf, endereco=endereco, 
+        placa=placa, modelo=modelo, ano=ano, cor=cor)
+
 while True:
     print('--------------------------')
     print('O que deseja fazer ?')
@@ -95,7 +129,7 @@ while True:
             cpf=cpf, endereco=endereco, 
             placa=placa, modelo=modelo, ano=ano, cor=cor)
     elif '2' in action:
-        print('editar')
+        editar_registro()
     elif '3' in action:
         remover_registro()
     elif '4' in action:
